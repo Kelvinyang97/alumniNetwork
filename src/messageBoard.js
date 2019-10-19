@@ -154,16 +154,19 @@ export default function Messages() {
             UNSW Colleges Alumni Network
           </Typography>
           <nav>
+            <Link variant="button" color="inherit" href="/dashboard" className={classes.link}>
+              Home
+            </Link>  
             <Link variant="button" color="inherit" href="/profile" className={classes.link}>
               Profile
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/messageBoard" className={classes.link}>
               Message Board
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/jobs" className={classes.link}>
               Jobs
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/events" className={classes.link}>
               Events
             </Link>
           </nav>
