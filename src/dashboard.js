@@ -56,12 +56,16 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
+    color: colors.palette.primary.main,
+
   },
   toolbar: {
     flexWrap: 'wrap',
+    color: colors.palette.primary.main,
   },
   toolbarTitle: {
     flexGrow: 1,
+    color: colors.palette.primary.main,
   },
   link: {
     margin: theme.spacing(1, 1.5),
@@ -109,7 +113,7 @@ const tiers = [
       'Priority email support',
     ],
     buttonText: 'Get started',
-    buttonVariant: 'contained',
+    buttonVariant: 'outlined',
   },
   {
     title: 'Enterprise',
@@ -145,28 +149,28 @@ const footers = [
 
 export default function Pricing() {
   const classes = useStyles();
-  const colors = createMuiTheme();
+
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="static" color="#ffcc5c" elevation={0} className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+      <AppBar position="static" color="" elevation={0} className={classes.appBar}>
+        <Toolbar  color="" className={classes.toolbar}>
+          <Typography variant="h6" color = "" noWrap className={classes.toolbarTitle}>
             UNSW Colleges Alumni Network
           </Typography>
           <nav>
-            <Link variant="button" color="#ffcc5c" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="#" className={classes.link}>
               Message Board
             </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="#" className={classes.link}>
               Jobs
             </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="#" className={classes.link}>
               Events
             </Link>
           </nav>
-          <Link href="#" color="textPrimary" variant="button" className={classes.link}>
+          <Link href="#" color="inherit" variant="button" className={classes.link}>
             Search
           </Link>
         </Toolbar>
