@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
-// import Image from './graduation-feature_1-2.jpg'
+//import Background from './graduation-feature_1-2.jpg'
 
 const colors = createMuiTheme({
     palette: {
@@ -34,7 +34,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        SomethingSexy
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -45,13 +45,9 @@ function Copyright() {
 const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
-        image: {
-            backgroundImage: 'url($Image)',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'centre',
-        },
+        
     },
+    
     ul: {
       margin: 0,
       padding: 0,
@@ -89,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
   },
   footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
+    borderTop: '1px solid ${theme.palette.divider}',
     marginTop: theme.spacing(8),
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
@@ -142,7 +138,7 @@ const footers = [
   },
   {
     title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
+    description: ['Karie Mayman', 'Ricky Gao'],
   },
 ];
 
@@ -159,6 +155,9 @@ export default function Pricing() {
             UNSW Colleges Alumni Network
           </Typography>
           <nav>
+            <Link variant="button" color="inherit" href="/profile" className={classes.link}>
+              Profile
+            </Link>
             <Link variant="button" color="inherit" href="#" className={classes.link}>
               Message Board
             </Link>
