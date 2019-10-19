@@ -45,9 +45,8 @@ function Copyright() {
 const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
-        
+      backgroundColor: colors.palette.primary.background,
     },
-    
     ul: {
       margin: 0,
       padding: 0,
