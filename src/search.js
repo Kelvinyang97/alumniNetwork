@@ -18,16 +18,16 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, industry, degree, college) {
+  return { name, industry, degree, college };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Evie', 'SEC', 'COMPSCI', 'HALL'),
+  createData('Jack', 'seng', 'COMPSCI', 'HALL'),
+  createData('Kelvin', 'seng', 'COMPSCI', 'HALL'),
+  createData('Arpit ', 'seng', 'COMPSCI', 'HALL'),
+  createData('Luke', 'data', 'math', 'HALL'),
 ];
 
 export default function Dtable() {
@@ -63,10 +63,9 @@ export default function Dtable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.industry}</TableCell>
+              <TableCell align="right">{row.degree}</TableCell>
+              <TableCell align="right">{row.college}</TableCell>
             </TableRow>
           ))}
         </TableBody>

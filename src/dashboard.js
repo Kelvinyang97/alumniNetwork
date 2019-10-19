@@ -176,7 +176,7 @@ export default function Pricing() {
               Projects
             </Link>
           </nav>
-          <Link href="#" color="inherit" variant="button" className={classes.link}>
+          <Link href="#" color="inherit" variant="button" href='/search' className={classes.link}>
             Search
           </Link>
         </Toolbar>
