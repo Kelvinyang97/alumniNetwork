@@ -45,9 +45,8 @@ function Copyright() {
 const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
-        
+      backgroundColor: colors.palette.primary.background,
     },
-    
     ul: {
       margin: 0,
       padding: 0,
@@ -142,6 +141,9 @@ const footers = [
   },
 ];
 
+//const clickToTabs = function(event){
+  //console.log(event)
+//}
 export default function Pricing() {
   const classes = useStyles();
 
@@ -155,16 +157,19 @@ export default function Pricing() {
             UNSW Colleges Alumni Network
           </Typography>
           <nav>
+            <Link variant="button" color="inherit" href="/dashboard" className={classes.link}>
+              Home
+            </Link>
             <Link variant="button" color="inherit" href="/profile" className={classes.link}>
               Profile
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/messageBoard" className={classes.link}>
               Message Board
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/jobs" className={classes.link}>
               Jobs
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/events" className={classes.link}>
               Events
             </Link>
           </nav>
