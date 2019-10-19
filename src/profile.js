@@ -85,6 +85,14 @@ export default function Profile() {
         margin="normal"
       />
       <TextField
+        id="standard-yearofgrad"
+        label="Year of graduation"
+        className={classes.textField}
+        value={values.yearofgrad}
+        onChange={handleChange('yearofgrad')}
+        margin="normal"
+      />
+      <TextField
         id="standard-age"
         label="Gender"
         className={classes.textField}
@@ -106,8 +114,16 @@ export default function Profile() {
         id="standard-degree"
         label="Degree"
         className={classes.textField}
-        value={values.age}
-        onChange={handleChange('name')}
+        value={values.degree}
+        onChange={handleChange('Degree')}
+        margin="normal"
+      />
+      <TextField
+        id="standard-industry"
+        label="Industry"
+        className={classes.textField}
+        value={values.industry}
+        onChange={handleChange('Industry')}
         margin="normal"
       />
       {/* <TextField
