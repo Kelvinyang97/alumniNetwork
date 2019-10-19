@@ -5,9 +5,15 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
+    "firebase": "^7.2.1",
+    "firebase-tools": "^7.6.1",
+    "firebaseui": "^4.2.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-firebaseui": "^4.0.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "ui": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
