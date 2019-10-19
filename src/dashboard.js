@@ -159,7 +159,7 @@ export default function Pricing() {
           <nav>
             <Link variant="button" color="inherit" href="/dashboard" className={classes.link}>
               Home
-            </Link>  
+            </Link>
             <Link variant="button" color="inherit" href="/profile" className={classes.link}>
               Profile
             </Link>
@@ -169,7 +169,7 @@ export default function Pricing() {
             <Link variant="button" color="inherit" href="/jobs" className={classes.link}>
               Jobs
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/events" className={classes.link}>
               Events
             </Link>
           </nav>
