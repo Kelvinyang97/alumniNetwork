@@ -7,10 +7,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import SignInSide from './SignInSide'
-import SignUp from './SignUp'
-import SimpleTabs from './dashboard'
 import Signin from './signin'
+import Pricing from './dashboard'
 
 
 function App() {
@@ -20,8 +18,14 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
+            <Route exact path="/">
+              <Signin />
+            </Route>
             <Route path="/signin">
               <Signin />
+            </Route>
+            <Route path="/dashboard">
+              <Pricing />
             </Route>
           </Switch>
         </div>
