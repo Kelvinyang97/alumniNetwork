@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Signin from './signin'
 import Pricing from './dashboard'
+import Profile from './profile'
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Pricing />
+            </Route>
+            <Route path="/profile">
+              <Profile />
             </Route>
           </Switch>
         </div>
