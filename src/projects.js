@@ -141,7 +141,7 @@ const footers = [
   },
 ];
 
-export default function Jobs() {
+export default function Projects() {
   const classes = useStyles();
 
 
@@ -151,12 +151,12 @@ export default function Jobs() {
       <AppBar position="static" color="" elevation={0} className={classes.appBar}>
         <Toolbar  color="" className={classes.toolbar}>
           <Typography variant="h6" color = "textPrimary" noWrap className={classes.toolbarTitle}>
-            UNSW College Alumni Network
+            UNSW Colleges Alumni Network
           </Typography>
           <nav>
             <Link variant="button" color="inherit" href="/dashboard" className={classes.link}>
               Home
-            </Link>  
+            </Link>
             <Link variant="button" color="inherit" href="/profile" className={classes.link}>
               Profile
             </Link>
@@ -181,13 +181,47 @@ export default function Jobs() {
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h3" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Jobs and Internships
+          Projects and Start-Ups
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          There are currently no jobs listed.
+         There are currently no projects or startups!
         </Typography>
       </Container>
       {/* End hero unit */}
+      <Container maxWidth="md" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {tiers.map(tier => (
+            // Enterprise card is full width at sm breakpoint
+            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+              <Card>
+                <CardHeader
+                  title={tier.title}
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{ align: 'center' }}
+                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  className={classes.cardHeader}
+                />
+                <CardContent>
+                  
+                  <ul>
+                    {tier.description.map(line => (
+                      <Typography component="li" variant="subtitle1" align="center" key={line}>
+                        {line}
+                      </Typography>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
