@@ -10,6 +10,8 @@ import {
 import Signin from './signin'
 import Pricing from './dashboard'
 import Profile from './profile'
+import Messages from './messageBoard'
+import Jobs from './jobs.js'
 
 
 function App() {
@@ -30,6 +32,12 @@ function App() {
             </Route>
             <Route path="/profile">
               <Profile />
+            </Route>
+            <Route path="/messageBoard">
+              <Messages />
+            </Route>
+            <Route path="/jobs">
+              <Jobs />
             </Route>
           </Switch>
         </div>
