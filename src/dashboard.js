@@ -141,6 +141,9 @@ const footers = [
   },
 ];
 
+//const clickToTabs = function(event){
+  //console.log(event)
+//}
 export default function Pricing() {
   const classes = useStyles();
 
@@ -157,10 +160,10 @@ export default function Pricing() {
             <Link variant="button" color="inherit" href="/profile" className={classes.link}>
               Profile
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/messageBoard" className={classes.link}>
               Message Board
             </Link>
-            <Link variant="button" color="inherit" href="#" className={classes.link}>
+            <Link variant="button" color="inherit" href="/jobs" className={classes.link}>
               Jobs
             </Link>
             <Link variant="button" color="inherit" href="#" className={classes.link}>
