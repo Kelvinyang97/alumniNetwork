@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
+import Image from './graduation-feature_1-2.jpg'
 
 const colors = createMuiTheme({
     palette: {
@@ -44,7 +45,12 @@ function Copyright() {
 const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
-      backgroundColor: colors.palette.primary.background,
+        image: {
+            backgroundImage: 'url($Image)',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'centre',
+        },
     },
     ul: {
       margin: 0,
@@ -56,7 +62,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    color: colors.palette.primary.main,
+    color: "colors.palette.primary.main",
 
   },
   toolbar: {
@@ -64,7 +70,7 @@ const useStyles = makeStyles(theme => ({
     color: colors.palette.primary.main,
   },
   toolbarTitle: {
-    flexGrow: 1,
+    flexGrow: 3,
     color: colors.palette.primary.main,
   },
   link: {
@@ -96,42 +102,35 @@ const useStyles = makeStyles(theme => ({
 
 const tiers = [
   {
-    title: 'Free',
+    title: 'Message board',
     price: '0',
-    description: ['10 users included', '2 GB of storage', 'Help center access', 'Email support'],
-    buttonText: 'Sign up for free',
+    description: ['Send and recieve messages'],
+    buttonText: 'Click here for more',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
+    title: 'Jobs',  
+    
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
+      'Check recent job advertisements',
     ],
-    buttonText: 'Get started',
+    buttonText: 'Click here for more',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: 'Events',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'Create or view upcoming events',
+    
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Click here for more',
     buttonVariant: 'outlined',
   },
 ];
 const footers = [
   {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
+    title: 'Founders',
+    description: ['Luke', 'Kelvin', 'Evie', 'Arpit', 'Jack'],
   },
   {
     title: 'Features',
@@ -156,7 +155,7 @@ export default function Pricing() {
       <CssBaseline />
       <AppBar position="static" color="" elevation={0} className={classes.appBar}>
         <Toolbar  color="" className={classes.toolbar}>
-          <Typography variant="h6" color = "" noWrap className={classes.toolbarTitle}>
+          <Typography variant="h6" color = "textPrimary" noWrap className={classes.toolbarTitle}>
             UNSW Colleges Alumni Network
           </Typography>
           <nav>
@@ -177,11 +176,11 @@ export default function Pricing() {
       </AppBar>
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Welcome!
+        <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
+          UCAN because WE CAN!
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Select a tab to start connecting!
+          A college's alumni are the reflection of its past, representations of its present, and a link to its future
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -200,14 +199,7 @@ export default function Pricing() {
                   className={classes.cardHeader}
                 />
                 <CardContent>
-                  <div className={classes.cardPricing}>
-                    <Typography component="h2" variant="h3" color="textPrimary">
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      /mo
-                    </Typography>
-                  </div>
+                  
                   <ul>
                     {tier.description.map(line => (
                       <Typography component="li" variant="subtitle1" align="center" key={line}>
