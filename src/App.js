@@ -13,6 +13,7 @@ import Profile from './profile'
 import Messages from './messageBoard'
 import Jobs from './jobs.js'
 import Events from './events.js'
+import Projects from './projects.js'
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
             </Route>
             <Route path="/events">
               <Events />
+            </Route>
+            <Route path="/projects">
+              <Projects />
             </Route>
           </Switch>
         </div>
