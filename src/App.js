@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import SignInSide from './SignInSide'
+import SignUp from './SignUp'
+import SimpleTabs from './dashboard'
 
 
 function App() {
@@ -17,13 +19,13 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/signin">Sign In</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/signup">Sign Up</Link>
               </li>
               <li>
-                <Link to="/users">Users</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
             </ul>
           </nav>
@@ -31,14 +33,14 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/about">
-              <About />
+            <Route path="/signin">
+              <SignInSide />
             </Route>
-            <Route path="/users">
-              <Users />
+            <Route path="/signup">
+              <SignUp />
             </Route>
-            <Route path="/">
-              <Home />
+            <Route path="/dashboard">
+              <SimpleTabs />
             </Route>
           </Switch>
         </div>
