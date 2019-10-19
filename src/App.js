@@ -12,6 +12,7 @@ import Pricing from './dashboard'
 import Profile from './profile'
 import Messages from './messageBoard'
 import Jobs from './jobs.js'
+import Events from './events.js'
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route path="/jobs">
               <Jobs />
+            </Route>
+            <Route path="/events">
+              <Events />
             </Route>
           </Switch>
         </div>

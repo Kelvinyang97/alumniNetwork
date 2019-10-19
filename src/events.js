@@ -141,7 +141,7 @@ const footers = [
   },
 ];
 
-export default function Jobs() {
+export default function Events() {
   const classes = useStyles();
 
 
@@ -175,10 +175,10 @@ export default function Jobs() {
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h3" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Jobs and Internships
+          Events
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          There are currently no jobs listed.
+          There are currently no upcoming events.
         </Typography>
       </Container>
       {/* End hero unit */}
