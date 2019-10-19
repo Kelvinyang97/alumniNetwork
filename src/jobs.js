@@ -169,6 +169,9 @@ export default function Jobs() {
             <Link variant="button" color="inherit" href="/events" className={classes.link}>
               Events
             </Link>
+            <Link variant="button" color="inherit" href="/projects" className={classes.link}>
+              Projects
+            </Link>
           </nav>
           <Link href="#" color="inherit" variant="button" className={classes.link}>
             Search
