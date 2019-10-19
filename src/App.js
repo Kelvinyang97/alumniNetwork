@@ -10,6 +10,7 @@ import {
 import Signin from './signin'
 import Pricing from './dashboard'
 import Profile from './profile'
+import Dtable from './search'
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/profile">
               <Profile />
+            </Route>
+            <Route path="/search">
+              <Dtable />
             </Route>
           </Switch>
         </div>
