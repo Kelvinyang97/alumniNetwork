@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import {db} from './firebase'
+import Button from '@material-ui/core/Button';
+import {db, auth} from './firebase'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -23,37 +24,57 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const currencies = [
-  {
-    value: 'USD',
-    label: '$',
+const industries = [
+ {value:'IT',
+  label:'IT'
   },
-  {
-    value: 'EUR',
-    label: '€',
+  {value:'Banking',
+  label:'Banking'
   },
-  {
-    value: 'BTC',
-    label: '฿',
+  {value:'Medicine',
+  label:'Medicine'
   },
-  {
-    value: 'JPY',
-    label: '¥',
+  {value:'Law',
+  label:'Law'
   },
 ];
+
+const genders = [
+  {value:'male',
+   label:'male'
+   },
+   {value:'female',
+   label:'female'
+   },
+   {value:'other',
+   label:'other'
+   },
+ ];
+ 
 
 export default function Profile() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
     age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
+    yearofgrad: 0,
+    gender: '',
+    college: '',
+    degree: '',
+    industry: ''
   });
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
+
+  const submit = ()=>{
+    db.ref(`/users/`)
+  }
+
+  const goBack = ()=>{
+    console.log('submit!!!!')
+  }
 
   return (
     <form className={classes.container} noValidate autoComplete="off">
@@ -95,11 +116,18 @@ export default function Profile() {
       <TextField
         id="standard-age"
         label="Gender"
+        select
         className={classes.textField}
         value={values.gender}
         onChange={handleChange('gender')}
         margin="normal"
-      />
+      >
+         {genders.map(option => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
       <TextField
         required
         id="standard-college"
@@ -121,189 +149,26 @@ export default function Profile() {
       <TextField
         id="standard-industry"
         label="Industry"
-        className={classes.textField}
+        select
         value={values.industry}
+        className={classes.textField}
         onChange={handleChange('Industry')}
         margin="normal"
-      />
-      {/* <TextField
-        id="standard-uncontrolled"
-        label="Password"
-        defaultValue="foo"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        required
-        id="standard-required"
-        label="Required"
-        defaultValue="Hello World"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        error
-        id="standard-error"
-        label="Error"
-        defaultValue="Hello World"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        disabled
-        id="standard-disabled"
-        label="Disabled"
-        defaultValue="Hello World"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        id="standard-password-input"
-        label="Password"
-        className={classes.textField}
-        type="password"
-        autoComplete="current-password"
-        margin="normal"
-      />
-      <TextField
-        id="standard-read-only-input"
-        label="Read Only"
-        defaultValue="Hello World"
-        className={classes.textField}
-        margin="normal"
-        InputProps={{
-          readOnly: true,
-        }}
-      />
-      <TextField
-        id="standard-dense"
-        label="Dense"
-        className={clsx(classes.textField, classes.dense)}
-        margin="dense"
-      />
-      <TextField
-        id="standard-multiline-flexible"
-        label="Multiline"
-        multiline
-        rowsMax="4"
-        value={values.multiline}
-        onChange={handleChange('multiline')}
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        id="standard-multiline-static"
-        label="Multiline"
-        multiline
-        rows="4"
-        defaultValue="Default Value"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        id="standard-helperText"
-        label="Helper text"
-        defaultValue="Default Value"
-        className={classes.textField}
-        helperText="Some important text"
-        margin="normal"
-      />
-      <TextField
-        id="standard-with-placeholder"
-        label="With placeholder"
-        placeholder="Placeholder"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        id="standard-textarea"
-        label="With placeholder multiline"
-        placeholder="Placeholder"
-        multiline
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        id="standard-number"
-        label="Number"
-        value={values.age}
-        onChange={handleChange('age')}
-        type="number"
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-        margin="normal"
-      />
-      <TextField
-        id="standard-search"
-        label="Search field"
-        type="search"
-        className={classes.textField}
-        margin="normal"
-      />
-      <TextField
-        id="standard-select-currency"
-        select
-        label="Select"
-        className={classes.textField}
-        value={values.currency}
-        onChange={handleChange('currency')}
-        SelectProps={{
-          MenuProps: {
-            className: classes.menu,
-          },
-        }}
-        helperText="Please select your currency"
-        margin="normal"
       >
-        {currencies.map(option => (
+           {industries.map(option => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}
           </MenuItem>
         ))}
       </TextField>
-      <TextField
-        id="standard-select-currency-native"
-        select
-        label="Native select"
-        className={classes.textField}
-        value={values.currency}
-        onChange={handleChange('currency')}
-        SelectProps={{
-          native: true,
-          MenuProps: {
-            className: classes.menu,
-          },
-        }}
-        helperText="Please select your currency"
-        margin="normal"
-      >
-        {currencies.map(option => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </TextField>
-      <TextField
-        id="standard-full-width"
-        label="Label"
-        style={{ margin: 8 }}
-        placeholder="Placeholder"
-        helperText="Full width!"
-        fullWidth
-        margin="normal"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-      <TextField
-        id="standard-bare"
-        className={classes.textField}
-        defaultValue="Bare"
-        margin="normal"
-        inputProps={{ 'aria-label': 'bare' }}
-      /> */}
+      <div>
+      <Button variant="contained" onClick={()=>{submit()}}>
+          <p>Submit</p>
+      </Button>
+      <Button variant="contained" onClick={()=>{goBack()}}>
+          <p>Back</p>
+      </Button>
+      </div>
     </form>
   );
 }
