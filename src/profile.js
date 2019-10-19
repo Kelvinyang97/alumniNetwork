@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import {db, auth} from './firebase'
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -165,9 +166,9 @@ export default function Profile() {
       <Button variant="contained" onClick={()=>{submit()}}>
           <p>Submit</p>
       </Button>
-      <Button variant="contained" onClick={()=>{goBack()}}>
+      <Link href='/dashboard'>
           <p>Back</p>
-      </Button>
+      </Link>
       </div>
     </form>
   );
