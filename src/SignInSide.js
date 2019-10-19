@@ -114,9 +114,10 @@ export default function SignInSide() {
                 </Link>
               </Grid>
               <Grid item>
-                <ul>
+                {/* <ul>
                     <li><Link to="/SignUp">React</Link></li>
-                </ul>
+                </ul> */}
+                
               </Grid>
             </Grid>
             <Box mt={5}>
