@@ -58,16 +58,61 @@ export default function Profile() {
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <TextField
-        id="standard-name"
-        label="Name"
+        required
+        id="standard-firstname"
+        label="First name"
         className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
+        value={values.firstname}
+        onChange={handleChange('first name')}
         margin="normal"
       />
       <TextField
+        required
+        id="standard-lastname"
+        label="Last name"
+        className={classes.textField}
+        value={values.lastname}
+        onChange={handleChange('last name')}
+        margin="normal"
+      />
+      <TextField
+        required
+        id="standard-age"
+        label="Age"
+        className={classes.textField}
+        value={values.age}
+        onChange={handleChange('age')}
+        margin="normal"
+      />
+      <TextField
+        id="standard-age"
+        label="Gender"
+        className={classes.textField}
+        value={values.gender}
+        onChange={handleChange('gender')}
+        margin="normal"
+      />
+      <TextField
+        required
+        id="standard-college"
+        label="College"
+        className={classes.textField}
+        value={values.college}
+        onChange={handleChange('college')}
+        margin="normal"
+      />
+      <TextField
+        required
+        id="standard-degree"
+        label="Degree"
+        className={classes.textField}
+        value={values.age}
+        onChange={handleChange('name')}
+        margin="normal"
+      />
+      {/* <TextField
         id="standard-uncontrolled"
-        label="Uncontrolled"
+        label="Password"
         defaultValue="foo"
         className={classes.textField}
         margin="normal"
@@ -242,7 +287,7 @@ export default function Profile() {
         defaultValue="Bare"
         margin="normal"
         inputProps={{ 'aria-label': 'bare' }}
-      />
+      /> */}
     </form>
   );
 }

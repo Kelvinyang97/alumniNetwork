@@ -159,6 +159,9 @@ export default function Pricing() {
             UNSW Colleges Alumni Network
           </Typography>
           <nav>
+            <Link variant="button" color="inherit" href="/profile" className={classes.link}>
+              Profile
+            </Link>
             <Link variant="button" color="inherit" href="#" className={classes.link}>
               Message Board
             </Link>
